@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tugas Web</title>
+	<link rel="stylesheet" type="text/css" href="../css/tampilan.css">
+	<script language="javascript" src="../Js/biodata.js"> </script>
+</head>
+<body>
+
+	<div class="container">
+		<div class="header">
+			
+		</div>
+		<div class="menu">
+			<ul>
+				<li><a href="biodata.html">Biodata</a></li>
+				<li><a href="materi.html">Materi Kuliah</a></li>
+				<li><a href="pencarian.html">Pencarian</a></li>
+			</ul>
+		</div>
+		<div class="konten">
+			
+			<center><h1>BIODATA MAHASISWA</h1>
+			<img src="images.jpg"
+
+			<div class="konten">
+		<p>
+		Nama			: LAILA FITHRI RAFIFAH <br>
+		Tempat / Tanggal Lahir	: karawang, 26 Desember 2000<br>
+		Alamat			: cikampek barat,cikampek kab. karang <br>
+		Fakultas		: Teknologi Industri<br>
+		Jurusan		: Teknik Informatika<br>
+		Hobby			: kuliner<br>
+		Cita-Cita 		: Menjadi Orang Yang Sukses Dan Bahagia Dunia Akhirat<br>
+		
+			
+
+			</center>
+
+
+		</div>
+		<div class="footer">
+			
+		</div>
+	</div>
+
+</body>
+</html>
+
+<?php
+	$filecounter = "counter.txt";
+	$f1 = $f1=Fopen($filecounter,"r+");
+	$hit=Fread($f1,filesize($filecounter));
+
+	echo "<table width=250 align=center border=1 cellspacing=0 cellpadding=0 bordercolor=#000ff><tr>";
+	echo "<td width=250 valign=middle align=center>";
+	echo "<font face=verdana size=2 color=#ff0000><b>";
+	echo "Anda pengunjungn yang ke : ";
+	echo $hit;
+	echo "</br></font>";
+	echo "</td>";
+	echo "</tr></table>";
+
+	fclose($f1);
+	$f1=fopen($filecounter,"w+");
+	$hit=$hit+1;
+	fwrite($f1,$hit,strlen($hit));
+	fclose($f1);
+?>
